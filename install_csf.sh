@@ -1,7 +1,8 @@
 #!/bin/bash
 echo ""
 
-rm -rf /usr/src/csf* && rm -rf /etc/csf > /dev/null 2>&1
+# remove previous installations
+rm -rf /usr/src/csf* > /dev/null 2>&1 && rm -rf /etc/csf > /dev/null 2>&1
 
 echo -e -n "[ \e[92mWhich ports would you like to allow? (example: 80,443) \e[39m]: "
 read ports
