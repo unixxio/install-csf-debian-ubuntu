@@ -22,7 +22,7 @@ case "${question_response}" in
     *)
 esac
 
-echo -e -n "\n[ \e[92mWaiting while installation is being completed ... \e[39m]"
+echo -e "\n[ \e[92mWaiting while installation is being completed ... \e[39m]"
 
 # download and install csf
 cd /usr/src > /dev/null 2>&1
