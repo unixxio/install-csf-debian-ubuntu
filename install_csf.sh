@@ -4,6 +4,9 @@ echo ""
 # remove previous installations
 rm -rf /usr/src/csf* > /dev/null 2>&1 && rm -rf /etc/csf > /dev/null 2>&1
 
+# install required dependencies
+apt-get install libwww-perl -y > /dev/null 2>&1
+
 echo -e -n "[ \e[92mWhich ports would you like to allow? (example: 80,443) \e[39m]: "
 read ports
 
