@@ -55,7 +55,7 @@ sed -i "s/${TCP6_IN}/${ports}/g" /etc/csf/csf.conf
 sed -i -e 's#TESTING = "1"#TESTING = "0"#g' /etc/csf/csf.conf
 
 # obtain networks to put in csf.allow
-for ip in `hostname -I`; do echo "${ip}" >> .interfaces.tmp; network="$(cat tmp.txt | grep ${ip} | rev | cut -d. -f2-4 | rev).0/24"; echo "${network} # automatically added" >> /etc/csf/csf.allow; done
+for ip in `hostname -I`; do echo "${ip}" >> .interfaces.tmp; network="$(cat .interfaces.tmp | grep ${ip} | rev | cut -d. -f2-4 | rev).0/24"; echo "${network} # automatically added" >> /etc/csf/csf.allow; done
 
 # remove temporary files
 rm .interfaces* > /dev/null 2>&1
