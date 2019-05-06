@@ -1,6 +1,13 @@
 #!/bin/bash
 echo ""
 
+# check if script is executed as root
+myuid="$(/usr/bin/id -u)"
+if [[ "${myuid}" != 0 ]]; then
+    echo -e "\n[ Error ] This script must be run as root.\n"
+    exit 0;
+fi
+
 # clear temporary file (if it exists)
 > .interfaces.tmp > /dev/null 2>&1
 
